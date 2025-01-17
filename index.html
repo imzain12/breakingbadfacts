@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breaking Bad Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        #app {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #e2e2e2;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1>Breaking Bad Facts</h1>
+        <ul id="facts-list"></ul>
+    </div>
+    <script>
+        const facts = [
+            {
+                "fact": "Title Meaning",
+                "description": "The term 'Breaking Bad' is a Southern colloquialism meaning to turn to a life of crime or immoral behavior."
+            },
+            {
+                "fact": "Casting Choices",
+                "description": "Bryan Cranston was not the first choice to play Walter White. The role was initially offered to actors like Matthew Broderick and John Cusack, who both turned it down."
+            },
+            {
+                "fact": "Real Chemistry",
+                "description": "The show's creator, Vince Gilligan, ensured that the chemistry depicted in the series was accurate. A chemistry professor was consulted to verify the scientific aspects of the meth-making process."
+            },
+            {
+                "fact": "Color Symbolism",
+                "description": "The show uses color symbolism extensively. For example, Walter White often wears green, symbolizing greed and money, while Skyler White is often seen in blue, representing loyalty and calmness."
+            },
+            {
+                "fact": "Saul Goodman Spin-off",
+                "description": "The character Saul Goodman, played by Bob Odenkirk, became so popular that he got his own spin-off series, 'Better Call Saul,' which explores his backstory."
+            },
+            {
+                "fact": "Jesse Pinkman's Fate",
+                "description": "Originally, Jesse Pinkman, played by Aaron Paul, was supposed to be killed off in the first season. However, his character was so well-received that the writers decided to keep him alive."
+            },
+            {
+                "fact": "Realistic Meth",
+                "description": "The blue meth seen in the show is actually rock candy. The prop department used dyed sugar crystals to create the iconic blue methamphetamine."
+            },
+            {
+                "fact": "Filming Location",
+                "description": "Although set in Albuquerque, New Mexico, the show was almost filmed in Riverside, California. The decision to film in Albuquerque was partly due to tax incentives."
+            },
+            {
+                "fact": "Walter White's Underwear",
+                "description": "The white briefs worn by Walter White in the pilot episode were auctioned off for $9,900 after the series ended."
+            },
+            {
+                "fact": "Record-Breaking Finale",
+                "description": "The series finale, 'Felina,' was watched by 10.3 million viewers, making it one of the most-watched cable TV finales at the time."
+            }
+        ];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const factsList = document.getElementById('facts-list');
+            facts.forEach(fact => {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `<strong>${fact.fact}:</strong> ${fact.description}`;
+                factsList.appendChild(listItem);
+            });
+        });
+    </script>
+</body>
+</html>
