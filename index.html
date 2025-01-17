@@ -36,15 +36,28 @@
             padding: 10px;
             border-radius: 5px;
         }
+
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
     <div id="app">
         <h1>Breaking Bad Facts</h1>
         <ul id="facts-list"></ul>
+        <button id="replace-facts">Replace Facts</button>
     </div>
     <script>
-        const facts = [
+        const factsSet1 = [
             {
                 "fact": "Title Meaning",
                 "description": "The term 'Breaking Bad' is a Southern colloquialism meaning to turn to a life of crime or immoral behavior."
@@ -64,7 +77,10 @@
             {
                 "fact": "Saul Goodman Spin-off",
                 "description": "The character Saul Goodman, played by Bob Odenkirk, became so popular that he got his own spin-off series, 'Better Call Saul,' which explores his backstory."
-            },
+            }
+        ];
+
+        const factsSet2 = [
             {
                 "fact": "Jesse Pinkman's Fate",
                 "description": "Originally, Jesse Pinkman, played by Aaron Paul, was supposed to be killed off in the first season. However, his character was so well-received that the writers decided to keep him alive."
@@ -87,12 +103,24 @@
             }
         ];
 
-        document.addEventListener('DOMContentLoaded', () => {
+        let currentFacts = factsSet1;
+
+        function displayFacts(facts) {
             const factsList = document.getElementById('facts-list');
+            factsList.innerHTML = '';
             facts.forEach(fact => {
                 const listItem = document.createElement('li');
                 listItem.innerHTML = `<strong>${fact.fact}:</strong> ${fact.description}`;
                 factsList.appendChild(listItem);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            displayFacts(currentFacts);
+
+            document.getElementById('replace-facts').addEventListener('click', () => {
+                currentFacts = currentFacts === factsSet1 ? factsSet2 : factsSet1;
+                displayFacts(currentFacts);
             });
         });
     </script>
